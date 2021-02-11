@@ -87,6 +87,12 @@ class State:
     def __hash__(self):
         return hash((self.position, self.corners))
 
+    def __getitem__(self, n):
+        if n == 0:
+            return self.position
+        if n == 1:
+            return self.corners
+        raise IndexError
 
 
 def depthFirstSearch(problem):
